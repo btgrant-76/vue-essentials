@@ -1,37 +1,26 @@
 <template>
   <div id="app" class="container mt-5">
-    <h1>My Shop</h1>
-		<navbar
-				:cart="cart"
-				:cartQty="cartQty"
-				:cartTotal="cartTotal"
-				@toggle="toggleSliderStatus"
-				@delete="deleteItem"
-		></navbar>
-    <p class="animated fadeInRight">Take a look at our offerings</p>
-    <font-awesome-icon icon="shopping-cart"></font-awesome-icon>
-		<PriceSlider :sliderStatus="sliderStatus" :maximum.sync="maximum"></PriceSlider>
-		<ProductList
-      :maximum="maximum"
-      :products="products"
-      @add="addItem"
-    ></ProductList>
+		<products
+			:cart="cart"
+			:cartQty="cartQty"
+			:cartTotal="cartTotal"
+			:maximum.sync="maximum"
+			:products="products"
+			:sliderStatus="sliderStatus"
+			@toggle="toggleSliderStatus"
+			@delete="deleteItem"
+			@add="addItem"
+		></products>
   </div>
 </template>
 
 <script>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import ProductList from "@/components/ProductList.vue"; // import Price from '@/components/Price.vue';
-import PriceSlider from "./components/PriceSlider.vue";
-import Navbar from '@/components/Navbar.vue';
+import Products from '@/components/Products.vue';
 
 export default {
   name: "app",
 	components: {
-		Navbar,
-		ProductList,
-		FontAwesomeIcon,
-		PriceSlider
+		Products,
 	},
 	data: function() {
     return {
