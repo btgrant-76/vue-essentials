@@ -5,8 +5,6 @@
 				:cart="cart"
 				:cartQty="cartQty"
 				:cartTotal="cartTotal"
-				@toggle="toggleSliderStatus"
-				@delete="deleteItem"
 		></navbar>
 		<p class="animated fadeInRight">Take a look at our offerings</p>
 		<font-awesome-icon icon="shopping-cart"></font-awesome-icon>
@@ -14,7 +12,6 @@
 		<ProductList
 				:maximum="maximum"
 				:products="products"
-				@add="addItem"
 		></ProductList>
 	</div>
 </template>
@@ -23,6 +20,7 @@
 import Navbar from '@/components/Navbar.vue';
 import PriceSlider from '@/components/PriceSlider.vue';
 import ProductList from '@/components/ProductList.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
 	name: "Products",
@@ -38,7 +36,8 @@ export default {
 	components: {
 		Navbar,
 		ProductList,
-		PriceSlider
+		PriceSlider,
+		FontAwesomeIcon
 	}
 }
 </script>
