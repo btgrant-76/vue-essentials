@@ -6,6 +6,7 @@
 				:cartQty="cartQty"
 				:cartTotal="cartTotal"
 				@toggle="toggleSliderStatus"
+				@delete="deleteItem"
 		></navbar>
     <p class="animated fadeInRight">Take a look at our offerings</p>
     <font-awesome-icon icon="shopping-cart"></font-awesome-icon>
@@ -43,14 +44,14 @@ export default {
 	computed: {
 		cartTotal: function() {
 			let sum = 0;
-			for (key in this.cart) {
+			for (let key in this.cart) {
 				sum = sum+(this.cart[key].product.price * this.cart[key].qty);
 			}
 			return sum;
 		},
 		cartQty: function() {
 			let qty = 0;
-			for (key in this.cart) {
+			for (let key in this.cart) {
 				qty = qty + this.cart[key].qty;
 			}
 			return qty;

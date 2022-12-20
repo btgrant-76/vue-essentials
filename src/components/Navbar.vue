@@ -23,7 +23,7 @@
 							<b>
 								<price :value="Number(item.qty * item.product.price)"></price>
 							</b>
-							<a href="#" @click.stop="deleteItem(index)"
+							<a href="#" @click.stop="$emit('delete', index)"
 								 class="badge badge-danger text-white">-</a>
 						</div>
 					</div>
