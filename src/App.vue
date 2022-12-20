@@ -15,15 +15,8 @@
 </template>
 
 <script>
-import Products from '@/components/Products.vue';
-import Checkout from '@/components/Checkout.vue';
-
 export default {
   name: "app",
-	components: {
-		Products,
-		Checkout
-	},
 	data: function() {
     return {
       maximum: 99,
